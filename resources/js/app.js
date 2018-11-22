@@ -2,8 +2,8 @@ require('./bootstrap');
 
 import Vue from 'vue'
 import axios from 'axios'
-import router from './routes/index'
 import VueRouter from 'vue-router'
+import {routes} from './routes/index'
 import Meta from 'vue-meta'
 import { APIENDPOINT } from './app.config.js'
 import store from './store/index'
@@ -17,6 +17,12 @@ Vue.use(axios)
 Vue.use(Meta)
 
 axios.defaults.baseURL = APIENDPOINT;
+
+const router = new VueRouter({
+    routes,
+    linkActiveClass: 'active',
+    mode: 'history'
+});
 
 initialize(store, router);
 

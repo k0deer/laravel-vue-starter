@@ -1,7 +1,8 @@
 export function initialize(store, router) {
     router.beforeEach((to, from, next) => {
         const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-        const currentUser = store.state.currentUser;
+        const currentUser = store.state.infoUser.currentUser;
+        // console.log(store.state);
     
         if(requiresAuth && !currentUser) {
             next('/login');
@@ -21,8 +22,8 @@ export function initialize(store, router) {
         return Promise.reject(error);
     });
 
-    if (store.getters.currentUser) {
-        setAuthorization(store.getters.currentUser.token);
+    if (store.getters['infoUser/currentUser']) {
+        setAuthorization(store.getters['infoUser/currentUser'].token);
     }
 }
 

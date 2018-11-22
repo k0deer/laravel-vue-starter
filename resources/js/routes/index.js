@@ -1,6 +1,6 @@
 import VueRouter from 'vue-router'
 
-let routes = [
+export const routes = [
     {
         path: '/',
         name: 'front-end',
@@ -29,7 +29,7 @@ let routes = [
     },
     {
         path: '/login',
-        name: 'admin',
+        name: 'login',
         component: require('../app/layouts/auth/app'),
         children: [
             {
@@ -60,10 +60,4 @@ let routes = [
     }
 ];
 
-const router = new VueRouter({
-    routes,
-    linkActiveClass: 'active',
-    mode: 'history'
-});
 
-export default router;

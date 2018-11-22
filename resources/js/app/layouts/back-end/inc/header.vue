@@ -29,14 +29,13 @@
         name: 'app-back-header',
         methods: {
             logout() {
-                // this.$store.commit('logout');
-                // this.$router.push('/login');
+                this.$store.commit('infoUser/logout');
+                this.$router.push('/login');
             }
         },
         computed: {
             currentUser() {
-                return false;
-                // return this.$store.getters.currentUser
+                return this.$store.getters['infoUser/currentUser']
             }
         }
     }

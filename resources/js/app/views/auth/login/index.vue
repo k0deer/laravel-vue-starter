@@ -35,7 +35,7 @@
         data() {
             return {
                 form: {
-                    email: 'test@gmail.com',
+                    email: 'fahey.vince@example.net',
                     password: 'secret'
                 },
                 error: null
@@ -43,20 +43,20 @@
         },
         methods: {
             authenticate() {
-                this.$store.dispatch('login');
+                this.$store.dispatch('infoUser/login');
                 login(this.$data.form)
                     .then((res) => {
-                        this.$store.commit("loginSuccess", res);
-                        this.$router.push({path: '/'});
+                        this.$store.commit("infoUser/loginSuccess", res);
+                        this.$router.push({path: '/admin'});
                     })
                     .catch((error) => {
-                        this.$store.commit("loginFailed", {error});
+                        this.$store.commit("infoUser/loginFailed", {error});
                     });
             }
         },
         computed: {
             authError() {
-                return this.$store.getters.authError;
+                return this.$store.getters['infoUser/authError'];
             }
         }
     }
