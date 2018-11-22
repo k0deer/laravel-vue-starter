@@ -1,36 +1,22 @@
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from 'vue'
+import axios from 'axios'
+import router from './routes/index'
+import VueRouter from 'vue-router'
+import Meta from 'vue-meta'
+import { APIENDPOINT } from './app.config.js'
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+window.Vue = Vue
+window.eventBus = new Vue()
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.use(VueRouter)
+Vue.use(axios)
+Vue.use(Meta)
 
-// const files = require.context('./', true, /\.vue$/i)
-
-// files.keys().map(key => {
-//     return Vue.component(_.last(key.split('/')).split('.')[0], files(key))
-// })
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+axios.defaults.baseURL = APIENDPOINT;
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router
 });
