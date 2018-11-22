@@ -1,0 +1,17 @@
+referencia:
+https://github.com/cretueusebiu/laravel-vue-spa?ref=madewithlaravel.com
+
+projecto final similar:
+
+Laravel 5.7
+Vue + VueRouter + Vuex + (after) VueI18n 
+
+VueI18n :
+https://www.supinfo.com/articles/single/6893-implement-i18n-in-vuejs-web-app
+
+Pages with dynamic and custom layouts
+Login, register and password reset
+vee-validate
+Authentication with JWT
+Socialite integration
+Manage roles views
