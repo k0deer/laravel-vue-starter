@@ -1,11 +1,12 @@
 <template>
     <div v-show="isShowApp">
             <div>
-                <!-- left navigation -->
                 <!-- top navigation -->
+                <Header />
+                <!-- left navigation -->
                 
                 <!-- page content -->
-                    <div>
+                    <div class="container">
                         <router-view></router-view>
                     </div>
                 <!-- /page content -->
@@ -15,7 +16,7 @@
 </template>
 
 <script>
-
+import Header from './inc/header.vue';
 export default {
     name:'ComponenteLayoutBackEnd',
     metaInfo: {
@@ -37,6 +38,7 @@ export default {
         }, 1000);
     },
     components: {
+        Header
     },
     data(){
         return {

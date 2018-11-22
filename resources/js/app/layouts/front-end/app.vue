@@ -1,10 +1,18 @@
 <template>
-    <div v-show="isShowApp">
+<div>
+
+    <Header />
+    <div class="container" v-show="isShowApp">
         <router-view></router-view>
 	</div>
+
+</div>
+
 </template>
 
 <script>
+
+import Header from './inc/header.vue';
 
 export default {
     name:'ComponenteLayoutFrontEnd',
@@ -27,6 +35,7 @@ export default {
         }, 1400);
     },
     components: {
+        Header
     },
     data(){
         return {

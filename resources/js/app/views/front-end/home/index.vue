@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="text-center">
         <h1>Page Home</h1>
     </div>  
 
