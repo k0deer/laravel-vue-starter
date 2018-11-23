@@ -9,9 +9,11 @@ Vue + VueRouter + Vuex + (after) VueI18n
 VueI18n :
 https://www.supinfo.com/articles/single/6893-implement-i18n-in-vuejs-web-app
 
-Pages with dynamic and custom layouts
-Login, register and password reset
+Pages with dynamic and custom layouts -ok
+Login - ok
+register -ok
+password reset
 vee-validate
-Authentication with JWT
+Authentication with JWT -ok
 Socialite integration
 Manage roles views

@@ -15,6 +15,9 @@
                         </div>
                         <div class="form-group row">
                             <input type="submit" value="Login">
+                            <div class="float-right">
+                                <router-link to="/register" class="nav-link">Register</router-link>
+                            </div>
                         </div>
                         <div class="form-group row" v-if="authError">
                             <p class="error">
